@@ -67,11 +67,15 @@ if __name__ == '__main__':
                       'Image features will be written to sequence feature with '
                       'this key, as bytes list feature, with only one entry, '
                       'containing quantized feature string.')
-  flags.DEFINE_string('video_file_feature_key', 'id',
+  
+  #Pat 2018
+  #flags.DEFINE_string('video_file_feature_key', 'id',
+  flags.DEFINE_string('video_file_key_feature_key', 'video_id',
                       'Input <video_file> will be written to context feature '
                       'with this key, as bytes list feature, with only one '
                       'entry, containing the file path of the video. This '
                       'can be used for debugging but not for training or eval.')
+  
   flags.DEFINE_boolean('insert_zero_audio_features', True,
                        'If set, inserts features with name "audio" to be 128-D '
                        'zero vectors. This allows you to use YouTube-8M '
